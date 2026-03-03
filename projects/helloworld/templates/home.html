@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %} Home {% endblock%}
+
+
+
+{% block content %}
+ {% include 'header.html' %}
+
+        <h1>Welcome {{ name }}</h1> 
+        <p> {% if age >= 18 %} you are adult now {{name}} {% else %} you need to grow up man {% endif %} </p>
+        <p> ohh, you didnt tell about us that </p>
+        <ul>
+            {% for skill in skills %}
+            <li>you are good at {{ skill }}</li>
+            {% endfor %}
+        </ul>
+
+        <img src="{% static 'images/image.png' %}" alt="screenshot" />
+
+
+
+        {% endblock %}
